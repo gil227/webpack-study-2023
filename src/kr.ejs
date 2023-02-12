@@ -1,0 +1,41 @@
+<%
+    const data = require("./data.cjs");
+%>
+<div>
+    <table align="center" style="max-width:700px; margin:0 auto; border-collapse:collapse; font-size:0; border-spacing:0;">
+        <tbody style="border-spacing:0;">
+        <%if(data.content.button === false){%>
+            <tr>
+                <td style="margin:0; padding:0;">
+                    <img src="<%-data.url%>/tw/<%-data.content.img%>" alt="">
+                    <span class="preheader" style="color: transparent; display: none; height: 0; max-height: 0; max-width: 0; opacity: 0; overflow: hidden; mso-hide: all; visibility: hidden; width: 0;"><%-data.content.tw%></span>
+                </td>
+            </tr>`
+        <%} else {%>
+            <tr>
+                <td style="margin:0; padding:0;">
+                    <a target="_blank" href="<%-data.content.href%>"><img style="margin-top:-1px; position:relative; z-index:9;" src="<%-data.url%>/tw/<%-data.content.img%>" alt="<%-data.content.alt%>"></a>
+                </td>
+            </tr>
+        <%}%>
+        <tr style="transform:translateY(-1px)">
+            <td style="background-color:#000; font-family: 'Noto Sans','Malgun Gothic','Apple SD Gothic Neo',Arial,Dotum,Gulim,sans-serif; font-weight:400; font-size:15px; color:#fff; padding:5% 7% 10% 7%; margin:0; position:relative;">
+                <ul style="list-style: none; text-decoration: none; line-height:2; margin:0; padding:0;">
+                    <li style="display:inline-block;"><a target="_blank" href="https://supercell.com/en/privacy-policy/tw/" style="color:#fff; text-decoration: none;">隱私保護政策</a>&nbsp;&nbsp;|&nbsp;</li>
+                    <li style="display:inline-block;"><a target="_blank" href="https://supercell.com/en/parents/tw/" style="color:#fff; text-decoration: none;">家長指南</a>&nbsp;&nbsp;|&nbsp;</li>
+                    <li style="display:inline-block;"><a target="_blank" href="https://supercell.com/en/safe-and-fair-play/tw/" style="color:#fff; text-decoration: none;">帳號安全和遊戲公平</a>&nbsp;&nbsp;|&nbsp;</li>
+                    <li style="display:inline-block;"><a target="_blank" href="mailto:legal-requests@supercell.com" style="color:#fff; text-decoration: none;">Supercell法律諮詢</a>&nbsp;&nbsp;|&nbsp;</li>
+                    <li style="display:inline-block;"><a target="_blank" href="<%asm_group_unsubscribe_raw_url%>" style="color:#fff; text-decoration: none;">取消訂閱</a></li>
+                </ul>
+                <div style="display:flex; align-items: flex-end;">
+                    <div>
+                        <p style="color:#9f9f9f; margin:50px 0 0 0; padding-right:30%;">您會收到這封郵件，是因為您在註冊Supercell ID時， 勾選了同意收到來自Supercell的最新消息。</p>
+                        <p style="color:#9f9f9f; margin:20px 0 0 0">Jätkäsaarenlaituri 1, 00180 Helsinki, Finland</p>
+                    </div>
+                    <a target="_blank" href="https://supercell.com/"><img src="https://a.id.supercell.com/scid-email/11072022/20221102/supercell_logo.png" width="50" alt=""></a>
+                </div>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
