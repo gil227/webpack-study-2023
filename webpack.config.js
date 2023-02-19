@@ -2,11 +2,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const RemoveFileWebpackPlugin = require("remove-files-webpack-plugin");
 
-module.exports = {
+ const config = {
     entry:'./src/index.js',
     output:{
         filename:'main.js',
         path:path.resolve(__dirname,'./dist')
+    },
+    stats: {
+        children: true,
     },
     plugins:[
         new RemoveFileWebpackPlugin({
@@ -16,11 +19,19 @@ module.exports = {
         }),
         new HtmlWebpackPlugin({
             template:"./src/kr.ejs",
-            filename:"./dist/kr.txt"
-        }),
-        new HtmlWebpackPlugin({
-            template:"./src/test/kr_test.ejs",
-            filename:"./dist/test/kr.txt"
+            filename:"./dist/kr.html"
         })
-    ]
+        // new HtmlWebpackPlugin({
+        //     template:"./src/test/kr_test.ejs",
+        //     filename:"./dist/test/kr.html"
+        // })
+    ],
+    module: {
+        rules: [],
+      },
 }
+
+module.exports = () => {
+      config.mode = "production";
+    return config;
+  };
